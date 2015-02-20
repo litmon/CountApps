@@ -32,8 +32,8 @@ public class MainActivity extends ActionBarActivity {
         tv.setText("" + count);
     }
 
-    public void multi(View v){
-        count *= 2;
+    public void pow(View v){
+        count = count * count;
         tv.setText("" + count);
     }
 

@@ -10,6 +10,11 @@ import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
 
+    final int OPE_PLUS = 1;
+    final int OPE_MINUS = 2;
+    final int OPE_MULTI = 3;
+
+    int ope;
     int count;
     TextView tv;
 
@@ -23,17 +28,30 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void plus(View v){
-        count++;
-        tv.setText("" + count);
+        ope = OPE_PLUS;
     }
 
     public void minus(View v){
-        count--;
-        tv.setText("" + count);
+        ope = OPE_MINUS;
     }
 
     public void multi(View v){
-        count *= 2;
+        ope = OPE_MULTI;
+    }
+
+    public void execute(View v){
+        switch (ope){
+            case OPE_PLUS:
+                count++;
+                break;
+            case OPE_MINUS:
+                count--;
+                break;
+            case OPE_MULTI:
+                count *= 2;
+                break;
+        }
+
         tv.setText("" + count);
     }
 
